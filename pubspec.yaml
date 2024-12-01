@@ -1,6 +1,5 @@
 name: aviator_predikta
-description: "Endesha ndege bila kuangusha"
-version: 1.0.0+1
+description: Endesha ndege bila kuangusha
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
@@ -8,12 +7,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.3
+  firebase_core: ^2.10.0
+  firebase_auth: ^5.7.0
+  provider: ^6.1.3 # Optional for state management
+  cloud_firestore: ^5.8.0 # Optional if you plan to use Firestore database
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-flutter:
-  uses-material-design: true
-  
+    
