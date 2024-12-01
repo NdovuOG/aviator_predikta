@@ -1,0 +1,35 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main   # Trigger the workflow on push to main branch
+  pull_request:
+    branches:
+      - main   # Trigger the workflow on pull requests to main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # Use the latest Ubuntu environment for building
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checkout your code to the runner
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2  # Set up Flutter SDK on the runner
+        with:
+          flutter-version: '3.0.0'  # Replace with your desired Flutter version
+
+      - name: Install dependencies
+        run: flutter pub get  # Get Flutter dependencies
+
+      - name: Run tests
+        run: flutter test  # Run tests (optional but recommended)
+
+      - name: Build APK (Optional)
+        run: flutter build apk  # Build an APK file for Android
+
+      - name: Build iOS (Optional)
+        run: flutter build ios  # Build for iOS (requires macOS runner)
+        
